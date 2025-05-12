@@ -1,4 +1,9 @@
-export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
+type MobileMenuProp = {
+    menuOpen: boolean;
+    setMenuOpen:React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const MobileMenu = ({ menuOpen, setMenuOpen } : MobileMenuProp) => {
 
     return (
         <div className={`fixed top-0 left-0 w-full bg-[rgb(28,35,53,0.8)] z-40 
@@ -11,7 +16,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
                         }
                         `}
         >
-            <button onClick={() => setMenuOpen(false)} className="absolute top-6 right-6 text-white text-3xl focus:outline-none cursor-pointer"
+            <button type="button" onClick={() => setMenuOpen(false)} className="absolute top-6 right-6 text-white text-3xl focus:outline-none cursor-pointer"
                 aria-label="Close Menu"
             >
                 &times;

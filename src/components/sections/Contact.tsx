@@ -9,10 +9,10 @@ export const Contact = () =>{
         message: "",
     })
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
 
-        emailjs.sendForm(import.meta.env.SERVICE_ID, import.meta.env.TEMPLATE_ID, e.target, import.meta.env.PUBLIC_KEY)
+        emailjs.sendForm(import.meta.env.SERVICE_ID, import.meta.env.TEMPLATE_ID, e.currentTarget, import.meta.env.PUBLIC_KEY)
         .then(()=>{
             alert("Message Sent!");
             setFormData({name: "", email: "", message: ""})
@@ -24,7 +24,7 @@ export const Contact = () =>{
     return (
         <section id="contact" className="min-h-screen flex items-center justify-center py-28">
             <RevealOnScroll>
-                <div className="px-4 w-150">
+                <div className="px-4 w-full md:w-150">
                     <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent text-center">
                         Get In Touch
                     </h2>
