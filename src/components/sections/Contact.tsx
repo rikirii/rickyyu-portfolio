@@ -11,13 +11,13 @@ export const Contact = () =>{
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
-
+        
         emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID as string, process.env.NEXT_PUBLIC_TEMPLATE_ID as string, e.currentTarget, process.env.NEXT_PUBLIC_PUBLIC_KEY as string)
         .then(()=>{
             alert("Message Sent!");
             setFormData({name: "", email: "", message: ""})
         })
-        .catch(()=> alert("Oops! Something went wrong. Please try again."));
+        .catch((error)=> alert("Oops! Something went wrong. Please try again."));
     };
 
 
