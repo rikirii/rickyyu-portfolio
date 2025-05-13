@@ -1,4 +1,4 @@
-import { RevealOnScroll } from "../RevealOnScroll";
+import { RevealOnScroll } from "../RevealOnScroll.tsx";
 
 export const Home = () => {
     return (<section id="home" className="min-h-screen flex items-center justify-center relative">

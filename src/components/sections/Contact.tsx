@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { RevealOnScroll } from "../RevealOnScroll"
+import { RevealOnScroll } from "../RevealOnScroll.tsx"
 import emailjs from "emailjs-com";
 
 export const Contact = () =>{
@@ -12,7 +12,7 @@ export const Contact = () =>{
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
 
-        emailjs.sendForm(import.meta.env.SERVICE_ID, import.meta.env.TEMPLATE_ID, e.currentTarget, import.meta.env.PUBLIC_KEY)
+        emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID as string, process.env.NEXT_PUBLIC_TEMPLATE_ID as string, e.currentTarget, process.env.NEXT_PUBLIC_PUBLIC_KEY as string)
         .then(()=>{
             alert("Message Sent!");
             setFormData({name: "", email: "", message: ""})

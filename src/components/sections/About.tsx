@@ -1,4 +1,4 @@
-import { RevealOnScroll } from "../RevealOnScroll";
+import { RevealOnScroll } from "../RevealOnScroll.tsx";
 
 export const About = () => {
 
