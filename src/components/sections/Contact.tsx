@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll.tsx"
 import emailjs from "emailjs-com";

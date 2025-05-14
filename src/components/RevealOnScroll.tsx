@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useRef, type ReactNode } from "react";
 
 type RevealOnScrollProp ={
@@ -9,7 +11,7 @@ export const RevealOnScroll = ({ children } :RevealOnScrollProp ) => {
 
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
+            if (entry?.isIntersecting) {
                 ref.current?.classList.add("visible");
             }
         }, { threshold: 0.2, rootMargin: "0px 0px -50px 0px" }
